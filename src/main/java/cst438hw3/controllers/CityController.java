@@ -28,12 +28,12 @@ public class CityController {
 		if(result == null) {
 			return "noCity";
 		} else {
-			model.addAttribute("city", result);
+			model.addAttribute("cityInfo", result);
 			return "city";
 		}
 	}	
 	
-	@PostMapping("/cities/reservation")
+	@PostMapping("/cities/{city}")
 	public String createReservation(
 			@RequestParam("city") String cityName,
 			@RequestParam("level") String level,
